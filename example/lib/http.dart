@@ -10,9 +10,8 @@ import 'package:wukongimfluttersdk/type/const.dart';
 import 'package:wukongimfluttersdk/wkim.dart';
 
 class HttpUtils {
-  // static String apiURL = "https://api.githubim.com";
-  static String apiURL = "http://62.234.8.38:7090/v1";
-  // static String apiURL = "http://175.27.245.108:15001";
+  static String apiURL = "https://dev-api.greenjoyclub.com/im/biz/v1";
+
   static getAvatarUrl(String uid) {
     return "$apiURL/users/$uid/avatar";
   }

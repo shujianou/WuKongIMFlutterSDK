@@ -45,6 +45,7 @@ class SDKPacker:
             ".metadata",
             ".DS_Store",
             "Thumbs.db",
+            ".cursorrules",
         ]
 
     def _should_exclude(self, path):
