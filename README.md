@@ -1,24 +1,8 @@
-## 悟空IM Flutter SDK
-
-![](https://img.shields.io/static/v1?label=platform&message=flutter&color=green) ![](https://img.shields.io/hexpm/l/plug.svg)
-
-[悟空IM](https://github.com/WuKongIM/WuKongIM "文档") flutter sdk 源码 [详细文档](http://githubim.com/sdk/flutter.html "文档")
-
 ## 快速入门
 
 ### 安装
 
-#### 方式一：通过pub.dev安装（推荐）
-
-[![pub package](https://img.shields.io/pub/v/wukongimfluttersdk.svg)](https://pub.dartlang.org/packages/wukongimfluttersdk)
-
-在你的项目的`pubspec.yaml`中添加：
-```yaml
-dependencies:
-  wukongimfluttersdk: ^version  # 使用上方徽章显示的最新版本号
-```
-
-#### 方式二：通过本地路径使用
+#### 通过本地路径使用
 
 1. 解压SDK压缩包到你的项目目录旁边，例如：
 ```
@@ -35,17 +19,6 @@ WuKongIMFlutterSDK/
 dependencies:
   wukongimfluttersdk:
     path: ../WuKongIMFlutterSDK  # 根据实际SDK位置调整路径
-```
-
-#### 方式三：通过Git仓库使用
-
-在你的项目的`pubspec.yaml`中添加：
-```yaml
-dependencies:
-  wukongimfluttersdk:
-    git:
-      url: https://github.com/WuKongIM/WuKongIMFlutterSDK.git
-      ref: main  # 或指定版本标签
 ```
 
 安装完成后，运行以下命令更新依赖：
