@@ -68,10 +68,27 @@ class _WKSocket {
 }
 
 class WKConnectionManager {
-  WKConnectionManager._privateConstructor();
+  WKConnectionManager._privateConstructor() {
+    _initNetworkState();
+  }
+
   static final WKConnectionManager _instance =
       WKConnectionManager._privateConstructor();
+
   static WKConnectionManager get shared => _instance;
+
+  // 初始化网络状态的方法
+  void _initNetworkState() {
+    _connectivity.checkConnectivity().then((value) {
+      if (value.isNotEmpty) {
+        lastConnectivityResult = value.first;
+      } else {
+        lastConnectivityResult = ConnectivityResult.none;
+      }
+      Logs.debug('初始化网络连接状态：$lastConnectivityResult');
+    });
+  }
+
   bool _isLogout = false;
   bool isReconnection = false;
   final int reconnMilliseconds = 1500;

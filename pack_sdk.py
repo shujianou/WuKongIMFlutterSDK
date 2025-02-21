@@ -28,6 +28,7 @@ class SDKPacker:
             "README.md",
             "CHANGELOG.md",
             "analysis_options.yaml",
+            "example/",
         ]
 
         # 要排除的文件和目录
