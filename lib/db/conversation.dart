@@ -300,7 +300,6 @@ class ConversationDB {
     msg.isDeleted = conversationMsg.isDeleted;
     msg.parentChannelID = conversationMsg.parentChannelID;
     msg.parentChannelType = conversationMsg.parentChannelType;
-    msg.localExtraMap = conversationMsg.localExtraMap;
     msg.setRemoteMsgExtra(conversationMsg.msgExtra);
     return msg;
   }

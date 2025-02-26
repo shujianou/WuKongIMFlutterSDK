@@ -10,6 +10,7 @@ class WkMessageContentType {
   static const file = 8;
   static const contentFormatError = 97;
   static const insideMsg = 99;
+  static const customCard = 300;
 }
 
 class WKChannelType {
