@@ -48,7 +48,7 @@ class WKConversationManager {
     }
     wkConversationMsg.channelID = msg.channelID;
     wkConversationMsg.channelType = msg.channelType;
-    wkConversationMsg.localExtraMap = msg.localExtraMap;
+    // wkConversationMsg.localExtraMap = msg.localExtraMap;
     wkConversationMsg.lastMsgTimestamp = msg.timestamp;
     wkConversationMsg.lastClientMsgNO = msg.clientMsgNO;
     wkConversationMsg.lastMsgSeq = msg.messageSeq;
@@ -302,5 +302,19 @@ class WKConversationManager {
         WKIM.shared.cmdManager.handleCMD(json);
       }
     }
+  }
+
+  Future<WKUIConversationMsg?> saveLocalExtraMap(WKMsg msg) async {
+    WKConversationMsg wkConversationMsg = WKConversationMsg();
+    wkConversationMsg.localExtraMap = msg.localExtraMap;
+    wkConversationMsg.channelID = msg.channelID;
+    wkConversationMsg.channelType = msg.channelType;
+    wkConversationMsg.lastMsgSeq = msg.messageSeq;
+    wkConversationMsg.lastClientMsgNO = msg.clientMsgNO;
+    wkConversationMsg.lastMsgTimestamp = msg.timestamp;
+    // 这里可以添加其他必要的逻辑
+    WKUIConversationMsg? uiMsg = await ConversationDB.shared
+        .insertOrUpdateWithConvMsg(wkConversationMsg);
+    return uiMsg;
   }
 }
